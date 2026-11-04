@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:auth="using:GRES.ViewModels.Auth"
+             
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GRES.Views.Auth.AuthView"
+             x:DataType="auth:AuthViewModel">
+
+      <UserControl.DataContext>
+          <auth:AuthViewModel/>
+      </UserControl.DataContext>
+      
+       <StackPanel VerticalAlignment="Center" 
+                  HorizontalAlignment="Center">
+        <StackPanel >
+          <StackPanel Spacing="20" VerticalAlignment="Center">
+             <StackPanel>
+               <Label Target="{Binding #LoginTB}"
+                      Content="Логин:"
+                      Margin="0 0 0 5" />
+               <TextBox x:Name="LoginTB" PlaceholderText="Введите логин" />            
+             </StackPanel>
+             
+             <StackPanel>
+               <Label Target="{Binding #PasswordTB}"
+                      Content="Пароль:"
+                      Margin="0 0 0 5" />
+               <TextBox  x:Name="PasswordTB"
+                         PasswordChar="*" 
+                         PlaceholderText="Введите пароль" />       
+             </StackPanel>
+             
+             <Button HorizontalAlignment="Stretch" 
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Margin="0 15 0 0" 
+                     Content="{Binding TextRequestButton}"/>
+        </StackPanel>
+        
+        
+          <Border  Margin="0 50 0 0"
+                   Padding="0 20 0 0"
+                   BorderThickness="0 2 0 0" 
+                   BorderBrush="Red">
+            <StackPanel Spacing="10">
+              <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="5">
+                <TextBlock Padding="0 7 0 0"
+                           Text="Нет аккаунта ?" />
+                <Button Content="Зарегистрируйтесь"/>
+              </StackPanel>
+              <Button Content="Продолжить без профиля" />  
+            </StackPanel>
+          </Border>
+        
+        </StackPanel>
+      </StackPanel>
+</UserControl>

@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:route="using:GRES.ViewModels.Routing"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="route:LinkViewModel"
+             x:Class="GRES.Views.Routing.LinkView">
+    
+    <Design.DataContext>
+      <route:LinkViewModel/>
+    </Design.DataContext>
+    <UserControl.Template>
+       <ControlTemplate>
+            <Button BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Command="{Binding Lead}"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch">
+                <ContentPresenter Content="{TemplateBinding Content}" />     
+            </Button>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

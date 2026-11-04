@@ -1,0 +1,10 @@
+<Solution>
+  <!-- Временно отключаем Android, чтобы не спамил ошибками SDK -->
+  <!-- 
+  <Project Path="GRES.Android/GRES.Android.csproj">
+    <Deploy />
+  </Project> 
+  -->
+  <Project Path="GRES.Desktop/GRES.Desktop.csproj" />
+  <Project Path="GRES/GRES.csproj" />
+</Solution>

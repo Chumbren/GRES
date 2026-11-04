@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:auth="using:GRES.Views.Auth"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:home="using:GRES.Views.Home"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:GRES.ViewModels"
+             xmlns:router="using:GRES.Views.Routing"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GRES.Views.MainView"
+             x:DataType="vm:MainViewModel">
+             <router:RouterView Start="home" x:Name="router">
+                <StackPanel>
+                   
+                   <router:RouteView Link="auth">
+                        <auth:AuthView/>
+                   </router:RouteView> 
+
+                   <router:RouteView Link="home">
+                        <home:HomeView />
+                   </router:RouteView>
+             </StackPanel>
+             </router:RouterView>
+</UserControl>

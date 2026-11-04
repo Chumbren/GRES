@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Avalonia: Desktop (Windows)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-desktop",
+            "program": "${workspaceFolder}/GRES.Desktop/bin/Debug/net10.0/GRES.Desktop.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/GRES.Desktop",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}
