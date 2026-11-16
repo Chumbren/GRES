@@ -16,42 +16,57 @@
                   HorizontalAlignment="Center">
         <StackPanel >
           <StackPanel Spacing="20" VerticalAlignment="Center">
-             <StackPanel>
-               <Label Target="{Binding #LoginTB}"
-                      Content="Логин:"
-                      Margin="0 0 0 5" />
+             
+            <StackPanel IsVisible="{Binding IsRegistration}">
+               <Label 
+               Target="{Binding #NameTB}"
+               Content="Никнейм:"
+               Margin="0 0 0 5" />
+               <TextBox x:Name="NameTB" PlaceholderText="Введите свой никнейм" />            
+            </StackPanel>
+            <StackPanel>
+               <Label 
+               Target="{Binding #LoginTB}"
+               Content="Логин:"
+               Margin="0 0 0 5" />
                <TextBox x:Name="LoginTB" PlaceholderText="Введите логин" />            
              </StackPanel>
              
              <StackPanel>
-               <Label Target="{Binding #PasswordTB}"
-                      Content="Пароль:"
-                      Margin="0 0 0 5" />
+               <Label 
+               Target="{Binding #PasswordTB}"
+               Content="Пароль:"
+               Margin="0 0 0 5" />
                <TextBox  x:Name="PasswordTB"
                          PasswordChar="*" 
                          PlaceholderText="Введите пароль" />       
              </StackPanel>
              
-             <Button HorizontalAlignment="Stretch" 
-                     HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Margin="0 15 0 0" 
-                     Content="{Binding TextRequestButton}"/>
+             <Button 
+             HorizontalAlignment="Stretch" 
+             HorizontalContentAlignment="Center"
+             VerticalContentAlignment="Center"
+             Margin="0 15 0 0" 
+             Content="{Binding TextRequestButton}"/>
         </StackPanel>
         
         
-          <Border  Margin="0 50 0 0"
-                   Padding="0 20 0 0"
-                   BorderThickness="0 2 0 0" 
-                   BorderBrush="Red">
+          <Border  
+          Margin="0 50 0 0"
+          Padding="0 20 0 0"
+          BorderThickness="0 2 0 0" 
+          BorderBrush="Red">
             <StackPanel Spacing="10">
-              <StackPanel Orientation="Horizontal" 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Spacing="5">
+              <StackPanel 
+              Orientation="Horizontal" 
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Spacing="5">
                 <TextBlock Padding="0 7 0 0"
                            Text="Нет аккаунта ?" />
-                <Button Content="Зарегистрируйтесь"/>
+                <Button 
+                Content="{Binding TextSetAuthTypeButton}" 
+                Command="{Binding SetAuthTypeCommand}" />
               </StackPanel>
               <Button Content="Продолжить без профиля" />  
             </StackPanel>

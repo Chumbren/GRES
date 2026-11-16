@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="using:GRES.ViewModels.Home"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:container="using:GRES.Controls.Blocks"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="GRES.Views.Home.LeftPanel"
+             x:DataType="vm:HomeViewModel">
+
+   <UserControl.DataContext>
+      <vm:HomeViewModel/>
+   </UserControl.DataContext>
+    <Border Background="#181818"
+            BorderBrush="#2B2B2B"
+            BorderThickness="0,0,1,0"
+            Width="48"
+            VerticalAlignment="Stretch">
+        <DockPanel LastChildFill="False">
+
+            <container:BlockContainer 
+            DockPanel.Dock="Top" 
+            Orientation="Vertical"
+            VerticalAlignment="Center">
+                
+               <Button Classes="vscode-nav" 
+                             ToolTip.Tip="Главная">
+                    <Image Width="35" 
+                           Height="35"
+                           Stretch="Uniform"
+                           Source="/Assets/Img/Home/LeftPanel/left_panel_item_home.png" />
+               </Button>
+
+               <Button Classes="vscode-nav" 
+                             ToolTip.Tip="Главная">
+                    <Image Width="35" 
+                           Height="35"
+                           Stretch="Uniform"
+                           Source="/Assets/Img/Home/LeftPanel/left_panel_item_home.png" />
+               </Button>
+
+            </container:BlockContainer>
+
+            <!-- НИЖНЯЯ ГРУППА КНОПОК (Настройки / Профиль) -->
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical">
+                
+                <Button Classes="vscode-nav" 
+                        ToolTip.Tip="Настройки"
+                        Command="{Binding CloseCommand}">
+                    <Image Width="24" 
+                           Height="24"
+                           Stretch="Uniform"
+                           Source="/Assets/Img/Home/LeftPanel/left_panel_item_home.png" />
+                </Button>
+
+            </StackPanel>
+        </DockPanel>
+    </Border>
+</UserControl>

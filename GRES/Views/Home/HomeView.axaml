@@ -1,11 +1,21 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:home="using:GRES.ViewModels.Home"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:panels="using:GRES.Views.Home"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="GRES.Views.Home.HomeView">
-  <TextBlock 
-     Text="PLAYER" TextAlignment="Center" 
-     Foreground="Red" 
-     FontSize="50" />
+             x:Class="GRES.Views.Home.HomeView"
+             x:DataType="home:HomeViewModel">
+             
+   <DockPanel LastChildFill="True">
+    <!-- 1. Верхнее меню прижимается к верхнему краю на 100% ширины -->
+    <panels:MenuPanel DockPanel.Dock="Top" />
+
+    <!-- 2. Левая панель прижимается к левому краю под верхним меню на 100% оставшейся высоты -->
+    <panels:LeftPanel DockPanel.Dock="Left" />
+
+    <!-- 3. Центральная панель (идет последней без DockPanel.Dock) заполняет всё оставшееся место -->
+    <panels:CenterPanel />
+</DockPanel>
 </UserControl>

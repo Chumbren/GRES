@@ -9,17 +9,21 @@
         xmlns:homeVM="using:GRES.ViewModels.Home"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GRES.Views.MainWindow"
+        ExtendClientAreaToDecorationsHint="True"
         Icon="/Assets/avalonia-logo.ico"
-        Title="GRES">
+        Title="GRES"
+        >
            <views:MainView />
-
-     <Window.DataTemplates>
-        <DataTemplate DataType="{x:Type authVM:AuthViewModel}">
-            <authViews:AuthView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type homeVM:HomeViewModel}">
-            <homeView:HomeView />
-        </DataTemplate>
-        
+    <Window.Background>
+        <SolidColorBrush Color="#1e1e1e" />
+    </Window.Background>
+    <Window.DataTemplates>
+       <DataTemplate DataType="{x:Type authVM:AuthViewModel}">
+           <authViews:AuthView />
+       </DataTemplate>
+       <DataTemplate DataType="{x:Type homeVM:HomeViewModel}">
+           <homeView:HomeView />
+       </DataTemplate>
+       
     </Window.DataTemplates>
 </Window>
